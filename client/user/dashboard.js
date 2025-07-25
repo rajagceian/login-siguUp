@@ -17,6 +17,7 @@ logout.addEventListener('click', async () => {
         const data = await res.json();
         if (res.ok) {
             localStorage.removeItem('username');
+            localStorage.removeItem('useremail');
 
             window.location.href = '../index.html'
         } else {
