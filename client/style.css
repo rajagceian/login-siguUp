@@ -1,0 +1,185 @@
+/* === Global Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === Glassmorphism Container === */
+.container {
+  position: relative;
+  width: 380px;
+  padding: 30px 25px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+/* === Form Container === */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* === Toggle Buttons === */
+.toggle {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.toggle button {
+  padding: 10px 25px;
+  cursor: pointer;
+  border: none;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.toggle .active {
+  background: #007bff;
+  color: #fff;
+}
+
+/* === Forms === */
+.form {
+  display: none;
+  flex-direction: column;
+}
+
+.form.active {
+  display: flex;
+}
+
+.form h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.form input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  color: #333;
+  transition: box-shadow 0.3s ease;
+}
+
+.form input:focus {
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.7);
+  outline: none;
+}
+
+.form button {
+  background: #007bff;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form button:hover {
+  background: #0056b3;
+}
+
+/* === Password Field & Eye === */
+.password-field {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.password-field input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #555;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* === Avatar Image (Optional) === */
+.avatar {
+  position: absolute;
+  top: -23px;
+  right: -23px;
+  background: white;
+  padding: 5px;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.avatar .person{
+  font-size:32px;
+}
+
+/* === Loader === */
+.loader {
+  display: none;
+  filter: none;
+  z-index: 999;
+  position: absolute;
+  top: 100px;
+  right: 150px;
+  height: 100px;
+  width: 100px;
+  border: 5px solid rgba(255, 255, 255, 0);
+  border-top: 5px solid #007bff;
+  border-radius: 50%;
+  animation: load 1s linear infinite;
+  margin: auto;
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* === Blur Effect on Background === */
+.loader-comes {
+  filter: blur(3px);
+}
+
+/* === Animation === */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
